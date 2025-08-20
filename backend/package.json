@@ -1,0 +1,25 @@
+{
+  "name": "@mayurrrao/medium-backend",
+  "version": "1.0.0",
+  "description": "Backend service for the Medium clone application.",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify"
+  },
+  "dependencies": {
+    "@mayurrrao/medium-common-zod": "^3.0.12",
+    "@prisma/client": "^6.4.1",
+    "@prisma/extension-accelerate": "^1.2.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "hono": "^4.6.16"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241218.0",
+    "prisma": "^6.2.1",
+    "wrangler": "^4.0.0"
+  },
+  "license": "ISC",
+  "author": "Mayur Rao"
+}

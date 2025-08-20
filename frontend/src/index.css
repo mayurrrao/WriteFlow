@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Medium.com Exact Color Scheme */
+@layer base {
+  body {
+    @apply bg-white text-gray-900;
+  }
+}
+
+/* Medium.com Color Classes */
+@layer components {
+  .medium-bg {
+    @apply bg-white;
+  }
+  .medium-text {
+    @apply text-gray-900;
+  }
+  .medium-text-light {
+    @apply text-gray-600;
+  }
+  .medium-text-muted {
+    @apply text-gray-500;
+  }
+  .medium-border {
+    @apply border-gray-200;
+  }
+  .medium-accent {
+    @apply text-green-600;
+  }
+  .medium-button {
+    @apply bg-gray-900 hover:bg-black text-white;
+  }
+  .medium-button-outline {
+    @apply border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white;
+  }
+  
+  /* Logo with transparent/dynamic background */
+  .logo-transparent {
+    /* Option 1: Blend with background (current) */
+    mix-blend-mode: multiply;
+    
+    /* Option 2: Remove white backgrounds - uncomment if needed */
+    /* background-color: transparent; */
+    /* filter: drop-shadow(0 0 0 transparent); */
+    
+    /* Option 3: For pure black logo on any background - uncomment if needed */
+    /* filter: brightness(0) saturate(100%) invert(0%); */
+    
+    /* Option 4: Smart background removal for white backgrounds - uncomment if needed */
+    /* filter: 
+      contrast(1.2) 
+      brightness(1.1) 
+      saturate(1.1); */
+  }
+  
+  /* Alternative: Logo that adapts to light/dark backgrounds */
+  .logo-adaptive {
+    /* This will make white areas transparent and dark areas visible */
+    filter: 
+      brightness(0) 
+      invert(1) 
+      contrast(100%) 
+      drop-shadow(0 0 0 currentColor);
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* Hide scrollbar in IE/Edge */
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+  }
